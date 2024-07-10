@@ -1,0 +1,35 @@
+{% extends 'temp/main_clinic.html' %}
+{% block base %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<center>
+    <h1 style="color: white">View Pharmacy Bill</h1>
+    <table border="1" class="table table-striped">
+         <tr style="color: white">
+            <td>Medicine Name</td>
+            <td>Quantity</td>
+            <td>Amount</td>
+            <td>Date</td>
+            <td>Time</td>
+
+        </tr>
+        {% for i in x %}
+        <tr style="color: white">
+         <td>{{ i.medicine.med_name }}</td>
+            <td>{{ i.qty }}</td>
+            <td>{{ i.amount }}</td>
+            <td>{{ i.date }}</td>
+        <td>{{ i.time }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</center>
+
+</body>
+</html>
+{% endblock %}

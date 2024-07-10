@@ -1,0 +1,38 @@
+{% extends 'temp/main_clinic.html' %}
+{% block base %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<center>
+    <h1 style="color: white">Manage staff</h1>
+    <table border="1" class="table table-striped">
+        <tr style="color: white">
+            <td>Name</td>
+            <td>Age</td>
+            <td>Gender</td>
+            <td>Place</td>
+            <td>Email</td>
+            <td>Phone Number</td>
+        </tr>
+        {% for i in x %}
+        <tr style="color: white">
+         <td>{{ i.name }}</td>
+            <td>{{ i.age }}</td>
+        <td>{{ i.gender }}</td>
+        <td>{{ i.place }}</td>
+            <td>{{ i.email }}</td>
+            <td>{{ i.phone_no }}</td>
+        
+         <td><a href="/staff_reg/delete/{{ i.staff_id }}" class="btn btn-primary">Delete</a> </td>
+        </tr>
+        {% endfor %}
+    </table>
+</center>
+
+</body>
+</html>
+{% endblock %}

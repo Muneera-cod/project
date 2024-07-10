@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form method="post">
+    {% csrf_token %}
+    <table>
+        <tr>
+            <td>Start Date</td>
+            <td><input type="date" required class="form-control" id="date" max="" name="date"></td>
+        </tr>
+        <tr>
+            <td>Period</td>
+            <td>
+                <input type="radio" name="period" value="day">Day<br>
+                <input type="radio" name="period" value="weak">Weak<br>
+                <input type="radio" name="period" value="month">Month<br>
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <input type="submit"  value="Submit">
+            </td>
+        </tr>
+    </table>
+</form>
+<script>
+  // Get current date
+  var today = new Date().toISOString().split('T')[0];
+
+  // Set minimum date for input field
+  document.getElementById("date").max = today;
+</script>
+</body>
+</html>

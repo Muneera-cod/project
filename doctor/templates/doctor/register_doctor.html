@@ -1,0 +1,52 @@
+{% extends 'temp/main_clinic.html' %}
+{% block base %}
+<div class="container position-relative wow fadeInUp" data-wow-delay="0.1s" >
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="bg-light text-center p-5">
+                        <h1 class="mb-4">Dentist Registration</h1>
+                        <form method="post" onsubmit="showAdminPopup()">
+                            {% csrf_token %}
+                            <div class="row g-3">
+                                <div class="col-12">
+                                    <input type="text" name="dname" class="form-control" placeholder="Enter Name" required="">
+                                </div>
+                                  <div class="col-12">
+                                    <input type="text" name="age" class="form-control" placeholder="Enter Age" required="">
+                                </div>
+                                  <div class="col-12">
+                                    <td><input type="radio" name="gen" checked="" value="male">Male
+                                    <input type="radio" name="gen" value="female">Female
+                                    <input type="radio" name="gen" value="others">Others</td>
+                                </div>
+                                <div class="col-12">
+                                    <input type="text" name="exp" class="form-control" placeholder="Enter Experience" required="">
+                                </div>
+                                 <div class="col-12">
+                                    <input type="text" name="spec" class="form-control" placeholder="Enter Specialization" required="">
+                                </div>
+                                <div class="col-12">
+                                    <input type="text" name="place" class="form-control" placeholder="Enter Place" required="">
+                                </div>
+                                 <div class="col-12">
+                                    <input type="text" name="username" class="form-control" placeholder="Enter Username" required="">
+                                </div>
+                                 <div class="col-12">
+                                    <input type="password" name="pass" class="form-control" placeholder="Enter Password" required="">
+                                </div>
+
+                                <div class="col-12">
+                                    <button class="btn btn-primary w-100 py-3" type="submit">Register</button>
+                                </div>
+                            </div>
+                              <script>
+    function showAdminPopup() {
+        alert('Succcessfully Registered')
+    }
+    </script>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+{% endblock %}

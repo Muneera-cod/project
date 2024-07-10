@@ -1,0 +1,38 @@
+{% extends 'temp/main_doctor.html' %}
+{% block base %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<center>
+    <h1 style="color: white">View Profile</h1>
+    <table border="1" class="table table-striped">
+        <tr style="color: white">
+            <td>Name</td>
+            <td>Age</td>
+            <td>Gender</td>
+            <td>Experience</td>
+            <td>Specialization</td>
+            <td>Place</td>
+        </tr>
+        {% for i in x %}
+        <tr style="color: white">
+         <td>{{ i.dname }}</td>
+            <td>{{ i.age }}</td>
+        <td>{{ i.gender }}</td>
+        <td>{{ i.experience }}</td>
+            <td>{{ i.specialization }}</td>
+            <td>{{ i.place }}</td>
+        
+         <td><a href="/doctor/update_profile/{{ i.doctor_id }}" class="btn btn-primary">Update</a> </td>
+        </tr>
+        {% endfor %}
+    </table>
+</center>
+
+</body>
+</html>
+{% endblock %}

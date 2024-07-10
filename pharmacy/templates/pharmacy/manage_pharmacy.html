@@ -1,0 +1,34 @@
+{% extends 'temp/main_clinic.html' %}
+{% block base %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<center>
+    <h1 style="color: white">Manage Pharmacy</h1>
+    <table border="1" class="table table-striped">
+        <tr style="color: white">
+            <td>Name</td>
+            <td>Place</td>
+            <td>Phone</td>
+            <td>Pincode</td>
+        </tr>
+        {% for i in x %}
+        <tr style="color: white">
+         <td>{{ i.name }}</td>
+            <td>{{ i.place }}</td>
+        <td>{{ i.phone }}</td>
+        <td>{{ i.pincode }}</td>
+        <td><a href="/pharmacy/update/{{ i.pharmacy_id }}" class="btn btn-primary">Update</a> </td>
+        <td><a href="/pharmacy/delete/{{ i.pharmacy_id }}" class="btn btn-primary">Delete</a> </td>
+        </tr>
+        {% endfor %}
+    </table>
+</center>
+
+</body>
+</html>
+{% endblock %}

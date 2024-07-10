@@ -1,0 +1,35 @@
+{% extends 'temp/main_clinic.html' %}
+{% block base %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<center>
+    <h1 style="color: white">Manage Doctor Schedule</h1>
+    <table border="1" class="table table-striped">
+        <tr style="color: white">
+            <td>Doctor Name</td>
+            <td>Start Time</td>
+            <td>End Time</td>
+            <td>Date</td>
+            <td>Time</td>
+        </tr>
+        {% for i in x %}
+        <tr style="color: white">
+         <td>{{ i.doctor.dname }}</td>
+            <td>{{ i.start_time }}</td>
+            <td>{{ i.end_time }}</td>
+        <td>{{ i.date }}</td>
+        <td>{{ i.time }}</td>
+         <td><a href="/doctor_schedule/delete/{{ i.schedule_id }}" class="btn btn-primary">Delete</a> </td>
+        </tr>
+        {% endfor %}
+    </table>
+</center>
+
+</body>
+</html>
+{% endblock %}

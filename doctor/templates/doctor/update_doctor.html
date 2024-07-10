@@ -1,0 +1,48 @@
+{% extends 'temp/main_clinic.html' %}
+{% block base %}
+<div class="container position-relative wow fadeInUp" data-wow-delay="0.1s">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="bg-light text-center p-5">
+                        <h1 class="mb-4">Update Doctor</h1>
+                        <form method="post" onsubmit="showAdminPopup()">
+                            {% csrf_token %}
+                            <div class="row g-3">
+                                <div class="col-12">
+                                    <input type="text" name="dname" class="form-control" value="{{ x.dname }}">
+                                </div>
+                                  <div class="col-12">
+                                    <input type="text" name="age" class="form-control" value="{{ x.age }}" >
+                                </div>
+
+                                <div class="col-12">
+                                    <input type="text" name="exp" class="form-control" value="{{ x.experience }}" >
+                                </div>
+                                 <div class="col-12">
+                                    <input type="text" name="spec" class="form-control" value="{{ x.specialization }}" >
+                                </div>
+                                <div class="col-12">
+                                    <input type="text" name="place" class="form-control" value="{{ x.place }}" >
+                                </div>
+ <div class="col-12">
+                                    <input type="text" name="username" class="form-control" placeholder="Enter Username" required="">
+                                </div>
+                                 <div class="col-12">
+                                    <input type="password" name="pass" class="form-control" placeholder="Enter Password" required="">
+                                </div>
+
+                                <div class="col-12">
+                                    <button class="btn btn-primary w-100 py-3" type="submit">update</button>
+                                </div>
+                            </div>
+                              <script>
+    function showAdminPopup() {
+        alert('Succcessfully Updated')
+    }
+    </script>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+{% endblock %}

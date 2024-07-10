@@ -1,0 +1,42 @@
+{% extends 'temp/main_user.html' %}
+{% block base %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<center>
+    <h1 style="color: white">View Profile</h1>
+    <table border="1" class="table table-striped">
+        <tr style="color: white">
+            <td>Name</td>
+            <td>Age</td>
+            <td>Gender</td>
+            <td>Place</td>
+            <td>Email</td>
+            <td>Phone Number</td>
+            <td>Username</td>
+            <td>Password</td>
+        </tr>
+        {% for i in x %}
+        <tr style="color: white">
+         <td>{{ i.name }}</td>
+            <td>{{ i.age }}</td>
+        <td>{{ i.gender }}</td>
+        <td>{{ i.place }}</td>
+            <td>{{ i.email }}</td>
+            <td>{{ i.phn_no }}</td>
+            <td>{{ i.username }}</td>
+            <td>{{ i.password }}</td>
+        
+         <td><a href="/user_reg/update/{{ i.user_id }}" class="btn btn-primary">Update</a> </td>
+        </tr>
+        {% endfor %}
+    </table>
+</center>
+
+</body>
+</html>
+{% endblock %}

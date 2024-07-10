@@ -1,0 +1,36 @@
+{% extends 'temp/main_doctor.html' %}
+{% block base %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<center>
+    <h1 style="color: white">Manage Prescription</h1>
+    <table border="1" class="table table-striped">
+        <tr style="color: white">
+            <td>User Name</td>
+            <td>Bill</td>
+            <td>Date</td>
+            <td>Time</td>
+            
+        </tr>
+        {% for i in x %}
+        <tr style="color: white">
+        <td>{{ i.user.name }}</td>
+         <td><a href="/static/{{ i.prescription }}"><img src="/static/{{ i.prescription }}" href="50" width="50"></a> </td>
+            <td>{{ i.date }}</td>
+        <td>{{ i.time }}</td>
+        <td><a href="/prescription/update/{{ i.prescription_id }}" class="btn btn-primary">Update</a> </td>
+        <td><a href="/prescription/delete/{{ i.prescription_id }}" class="btn btn-primary">Delete</a> </td>
+
+        </tr>
+        {% endfor %}
+    </table>
+</center>
+
+</body>
+</html>
+{% endblock %}

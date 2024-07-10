@@ -1,0 +1,35 @@
+{% extends 'temp/main_user.html' %}
+{% block base %}
+<div class="container position-relative wow fadeInUp" data-wow-delay="0.1s" style="margin-top: -6rem;">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="bg-light text-center p-5">
+                        <h1 class="mb-4">Complaint</h1>
+                        <form method="post" onsubmit="showAdminPopup()">
+                            {% csrf_token %}
+                            <div class="row g-3">
+                                <div class="col-12">
+                                    <select name="dname" class="form-control" required="">
+                                        {% for i in x %}
+                                            <option value="{{ i.doctor_id }}">{{ i.dname }}</option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
+                                <div class="col-12">
+                                    <input type="text" name="com" class="form-control" placeholder="Enter Complaint" required="">
+                                </div>
+                                <div class="col-12">
+                                    <button class="btn btn-primary w-100 py-3" type="submit">Submit</button>
+                                </div>
+                            </div>
+                          <script>
+    function showAdminPopup() {
+        alert('Succcessfully Added')
+    }
+    </script>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+{% endblock %}

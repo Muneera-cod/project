@@ -1,0 +1,45 @@
+{% extends 'temp/main_staff.html' %}
+{% block base %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<center>
+    <h1 style="color: white">Manage Booking</h1>
+    <table border="1" class="table table-striped">
+        <tr style="color: white">
+            <td>User Name</td>
+            <td>Doctor</td>
+            <td>Booking Time</td>
+            <td>Schedule Time</td>
+            <th>Schedule Date</th>
+            <td>Status</td>
+        </tr>
+        {% for i in x %}
+        <tr style="color: white">
+           <td>{{ i.user.name }}</td>
+        <td>{{ i.schedule.doctor.dname }}</td>
+        <td>{{ i.booking_time }}</td>
+            <td>{{ i.schedule.start_time}} - {{ i.schedule.end_time}}</td>
+            <td>{{ i.schedule.date }}</td>
+        <td>{{ i.status }}</td>
+            {%  if i.status == 'pending' %}
+            <td></td>
+{#            {%  else %}#}
+        <td><a href="/booking/approve/{{ i.booking_id }}" class="btn btn-primary">Accept</a> </td>
+            {% endif %}
+        {% if i.status == 'pending' %}
+        <td></td>
+         <td><a href="/booking/reject/{{ i.booking_id }}" class="btn btn-primary">Reject</a> </td>
+        {% endif %}
+        </tr>
+        {% endfor %}
+    </table>
+</center>
+
+</body>
+</html>
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends 'temp/main_pharmacy.html' %}
+{% block base %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<center>
+    <h1 style="color: white">Manage Medicine</h1>
+    <table border="1" class="table table-striped">
+        <tr style="color: white">
+            <td>Medicine Name</td>
+            <td>Amount</td>
+
+        </tr>
+        {% for i in x %}
+        <tr style="color: white">
+         <td>{{ i.med_name }}</td>
+            <td>{{ i.price }}</td>
+       <td><a href="/medicine/update/{{ i.medicine_id }}" class="btn btn-primary">Update</a> </td>
+         <td><a href="/medicine/dlll/{{ i.medicine_id }}" class="btn btn-primary">Delete</a> </td>
+        </tr>
+        {% endfor %}
+    </table>
+</center>
+
+</body>
+</html>
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends 'temp/main_doctor.html' %}
+{% block base %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<center>
+    <h1 style="color: white">View Booking</h1>
+    <table border="1" class="table table-striped">
+        <tr style="color: white">
+            <td>User Name</td>
+{#            <td>Doctor</td>#}
+
+            <td>Booking Time</td>
+            <td>Status</td>
+        </tr>
+        {% for i in x %}
+        <tr style="color: white">
+           <td>{{ i.user.name }}</td>
+{#        <td>{{ i.schedule_id }}</td>#}
+{#        <td>{{ i.booking_date }}</td>#}
+        <td>{{ i.booking_time }}</td>
+        <td>{{ i.status }}</td>
+
+        </tr>
+        {% endfor %}
+    </table>
+</center>
+
+</body>
+</html>
+{% endblock %}

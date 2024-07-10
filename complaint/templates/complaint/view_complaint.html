@@ -1,0 +1,36 @@
+{% extends 'temp/main_clinic.html' %}
+{% block base %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<center>
+    <h1 style="color: white">View Complaint</h1>
+    <table border="1" class="table table-striped">
+        <tr style="color: white">
+            <td>User Name</td>
+            <td>Doctor Name</td>
+            <td>Complaint</td>
+            <td>Date</td>
+            <td>Time</td>
+        </tr>
+        {% for i in x %}
+        <tr style="color: white">
+         <td>{{ i.user.name }}</td>
+            <td>{{ i.doctor.dname }}</td>
+            <td>{{ i.complaint }}</td>
+        <td>{{ i.date }}</td>
+        <td>{{ i.time }}</td>
+
+         <td><a href="/complaint/post_reply/{{ i.complaint_id }}" class="btn btn-primary">Reply</a> </td>
+        </tr>
+        {% endfor %}
+    </table>
+</center>
+
+</body>
+</html>
+{% endblock %}

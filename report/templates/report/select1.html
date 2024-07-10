@@ -1,0 +1,40 @@
+{% extends 'temp/main_clinic.html' %}
+{% block base %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form method="post">
+    {% csrf_token %}
+    <table class="table table-responsive text-light table-borderless">
+        <tr>
+            <td>Start Date</td>
+            <td><input type="date" required class="form-control" id="date" max="" name="date"></td>
+{#        </tr>#}
+{#        <tr>#}
+            <td>End Date</td>
+            <td><input type="date" required class="form-control" id="edate" max="" name="edate"></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td>
+                <input type="submit"  value="Submit" class="btn btn-success">
+            </td>
+        </tr>
+    </table>
+</form>
+<script>
+  // Get current date
+  var today = new Date().toISOString().split('T')[0];
+
+  // Set minimum date for input field
+  document.getElementById("date").max = today;
+  document.getElementById("edate").max = today;
+</script>
+</body>
+</html>
+{% endblock %}

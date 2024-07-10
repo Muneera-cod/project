@@ -1,0 +1,42 @@
+{% extends 'temp/main_pharmacy.html' %}
+{% block base %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<center>
+    <h1 style="color: white">View Medicine</h1>
+<form method="post">
+    {% csrf_token %}
+<table>
+    <tr>
+        <td><input type="text" name="lop" ></td>
+        <td><input type="submit" value="search"></td>
+    </tr>
+</table>
+</form>
+</table>
+    <table border="1" class="table table-striped">
+        <tr style="color: white">
+            <td>Medicine Name</td>
+            <td>Quantity</td>
+            <td>Amount</td>
+
+        </tr>
+        {% for i in x %}
+        <tr style="color: white">
+         <td>{{ i.med_name }}</td>
+            <td>{{ i.quantity }}</td>
+            <td>{{ i.price }}</td>
+       <td><a href="/pharmacy_bill/add_bill/{{ i.medicine_id }}" class="btn btn-primary">Add</a> </td>
+        </tr>
+        {% endfor %}
+    </table>
+</center>
+
+</body>
+</html>
+{% endblock %}

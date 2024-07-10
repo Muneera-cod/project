@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+<br>
+<h1 style="color:blue" align="center"><b>CLINIC CHARGE REPORT</b></h1><br>
+<p style="color: orange">{{ sdate }} - {{ edate }}</p><br><br>
+<table class="" border="1" style="background-color:powderblue;">
+    <tr style="height: 50px" align="center">
+        <th>Bill Id</th>
+        <th>Patient Id</th>
+        <th>Patient Name</th>
+        <th>Date</th>
+        <th>Amount</th>
+    </tr>
+    {% for i in x %}
+    <tr style="height: 30px">
+        <td align="center">{{ i.clinicbill_id}}</td>
+        <td align="center">{{ i.user_id }}</td>
+        <td align="center">{{ i.user.name }}</td>
+        <td align="center">{{ i.date }}</td>
+    <td align="center">{{ i.amount }}</td>
+    </tr>
+    {% endfor %}
+{#<tr>#}
+{#    <td></td>#}
+{#    <td>Total Quantity</td>#}
+{#    <td>{{ qty }}</td>#}
+{#</tr>#}
+<tr style="height: 30px">
+    <td></td>
+    <td></td>
+    <td></td>
+    <td style="color: red" align="center"><b>Total Amount</b></td>
+    <td style="background: white" align="center"><b>{{ amt }}</b></td>
+</tr>
+</table><br><br>
+<div style="margin-top: 10px">
+    <p>{{ date }}</p>
+</div>
+</body>
+</html>

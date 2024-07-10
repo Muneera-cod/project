@@ -1,0 +1,42 @@
+{% extends 'temp/main_pharmacy.html' %}
+{% block base %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<center>
+    <h1 style="color: white">Manage Pharmacy Bill</h1>
+    <table border="1" class="table table-striped">
+        <tr style="color: white">
+            <td>Medicine Name</td>
+            <td>Quantity</td>
+            <td>Amount</td>
+            <td>Date</td>
+            <td>Time</td>
+            <td>Status</td>
+
+        </tr>
+        {% for i in x %}
+        <tr style="color: white">
+         <td>{{ i.medicine.med_name }}</td>
+            <td>{{ i.qty }}</td>
+            <td>{{ i.amount }}</td>
+            <td>{{ i.date }}</td>
+            <td>{{ i.time }}</td>
+        <td>{{ i.status }}</td>
+         <td><a href="/pharmacy_bill/update/{{ i.phbill_id }}" class="btn btn-primary">Update</a> </td>
+        <td><a href="/pharmacy_bill/delete/{{ i.phbill_id }}" class="btn btn-primary">Delete</a> </td>
+            {% if i.status != 'paid' %}
+        <td><a href="/payment/pharmacy_bill/{{ i.phbill_id }}" class="btn btn-primary">Pay</a> </td>
+        {% endif %}
+        </tr>
+        {% endfor %}
+    </table>
+</center>
+
+</body>
+</html>
+{% endblock %}

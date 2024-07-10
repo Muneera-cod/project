@@ -1,0 +1,30 @@
+{% extends 'temp/main_user.html' %}
+{% block base %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<center>
+    <h1 style="color: white">View Reply</h1>
+    <table border="1" class="table table-striped">
+        <tr style="color: white">
+            <td>Complaint</td>
+            <td>Reply</td>
+
+        </tr>
+        {% for i in x %}
+        <tr style="color: white">
+
+            <td>{{ i.complaint }}</td>
+        <td>{{ i.reply }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</center>
+
+</body>
+</html>
+{% endblock %}
